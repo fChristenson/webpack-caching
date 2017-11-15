@@ -5,6 +5,7 @@
     "start": "node ./src/server.js",
     "build:stats": "webpack --config webpack.vendor.config.js --json --profile > stats.json && webpack-bundle-analyzer stats.json",
     "build:stats:better": "webpack --config webpack.vendor.better.config.js --json --profile > stats.json && webpack-bundle-analyzer stats.json",
+    "build:stats:best": "webpack --config webpack.vendor.best.config.js --json --profile > stats.json && webpack-bundle-analyzer stats.json",
     "build": "webpack",
     "build:buildhash": "webpack --config webpack.buildhash.config.js",
     "build:chunkhash": "webpack --config webpack.chunkhash.config.js",
