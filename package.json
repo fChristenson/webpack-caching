@@ -1,0 +1,28 @@
+{
+  "name": "",
+  "version": "",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "build:stats": "webpack --config webpack.vendor.config.js --json --profile > stats.json && webpack-bundle-analyzer stats.json",
+    "build:stats:better": "webpack --config webpack.vendor.better.config.js --json --profile > stats.json && webpack-bundle-analyzer stats.json",
+    "build": "webpack",
+    "build:buildhash": "webpack --config webpack.buildhash.config.js",
+    "build:chunkhash": "webpack --config webpack.chunkhash.config.js",
+    "build:vendor": "webpack --config webpack.vendor.config.js",
+    "build:vendor:better": "webpack --config webpack.vendor.better.config.js",
+    "build:vendor:evenbetter": "webpack --config webpack.vendor.even.better.config.js",
+    "build:vendor:best": "webpack --config webpack.vendor.best.config.js",
+    "clean": "rm -rf dist & rm stats.json",
+    "build:all": "npm run clean && npm run build & npm run build:buildhash & npm run build:chunkhash & npm run build:vendor & npm run build:vendor:better & npm run build:vendor:evenbetter & npm run build:vendor:best"
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "html-loader": "^0.5.1",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.8.1",
+    "webpack-bundle-analyzer": "^2.9.1"
+  }
+}
