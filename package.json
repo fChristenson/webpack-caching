@@ -13,12 +13,13 @@
     "build:vendor:better": "webpack --config webpack.vendor.better.config.js",
     "build:vendor:evenbetter": "webpack --config webpack.vendor.even.better.config.js",
     "build:vendor:best": "webpack --config webpack.vendor.best.config.js",
-    "clean": "rm -rf dist & rm stats.json",
+    "clean": "rm -rf dist & rm -f stats.json",
     "build:all": "npm run clean && npm run build & npm run build:buildhash & npm run build:chunkhash & npm run build:vendor & npm run build:vendor:better & npm run build:vendor:evenbetter & npm run build:vendor:best"
   },
   "dependencies": {
     "express": "^4.16.2",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "html-loader": "^0.5.1",
