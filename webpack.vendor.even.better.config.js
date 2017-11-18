@@ -15,7 +15,10 @@ module.exports = {
       name: "vendor",
       minChunks: ({ resource }) => /node_modules/.test(resource)
     }),
-    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "runtime",
+      minChunks: Infinity
+    }),
     new HtmlWebpackPlugin({
       filename: "vendor_even_better.html"
     })
